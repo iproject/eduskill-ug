@@ -46,6 +46,23 @@ $secondary: #b08959;
       height: 100%;
     }
   }
+
+  &-tagline {
+    background: url('../assets/img/bg-halftone-black-20p.png') no-repeat center
+      center/cover;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #6483e8;
+      z-index: -1;
+    }
+  }
 }
 
 #tm-login {
