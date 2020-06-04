@@ -1,0 +1,89 @@
+$primary: #000f71;
+$primary-light: #26aee9;
+$primary-dark: #000c65;
+$secondary: #b08959;
+
+:root {
+  --animate-delay: 0.5s;
+}
+
+#tm-home {
+  &-header {
+    width: 100%;
+    // background: $primary-light;
+
+    nav {
+      a {
+        cursor: pointer;
+
+        svg {
+          background: $primary;
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &-showcase {
+    height: calc(100vh - 88px);
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../assets/img/pattern.svg');
+      z-index: -1;
+    }
+
+    .container {
+      background: transparent;
+      height: 100%;
+    }
+  }
+}
+
+#tm-login {
+  &-header {
+    width: 100%;
+    z-index: 100;
+
+    a span {
+      letter-spacing: 2px;
+    }
+  }
+
+  &-showcase {
+    height: 100vh;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      #6483e8a6 0%,
+      #486d838a 50%,
+      #000000e0 100%
+    );
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../assets/img/landing-page-bg.jpg') no-repeat center
+        center/cover;
+      z-index: -1;
+    }
+
+    .container {
+      background: transparent;
+      height: 100%;
+    }
+  }
+}

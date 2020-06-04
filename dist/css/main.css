@@ -1,0 +1,73 @@
+:root {
+  --animate-delay: 0.5s;
+}
+
+#tm-home-header {
+  width: 100%;
+}
+
+#tm-home-header nav a {
+  cursor: pointer;
+}
+
+#tm-home-header nav a svg {
+  background: #000f71;
+  color: #000f71;
+}
+
+#tm-home-showcase {
+  height: calc(100vh - 88px);
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+#tm-home-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/img/pattern.svg");
+  z-index: -1;
+}
+
+#tm-home-showcase .container {
+  background: transparent;
+  height: 100%;
+}
+
+#tm-login-header {
+  width: 100%;
+  z-index: 100;
+}
+
+#tm-login-header a span {
+  letter-spacing: 2px;
+}
+
+#tm-login-showcase {
+  height: 100vh;
+  background: black;
+  background: -webkit-gradient(linear, left top, right top, from(#6483e8a6), color-stop(50%, #486d838a), to(#000000e0));
+  background: linear-gradient(90deg, #6483e8a6 0%, #486d838a 50%, #000000e0 100%);
+  position: relative;
+}
+
+#tm-login-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/img/landing-page-bg.jpg") no-repeat center center/cover;
+  z-index: -1;
+}
+
+#tm-login-showcase .container {
+  background: transparent;
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */
