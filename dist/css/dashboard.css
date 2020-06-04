@@ -1,99 +1,105 @@
-*{
-margin: 0px;
-padding: 0px;
-box-sizing:border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-html, body{
-height: 100%;
-padding: 0px;
-margin: 0px;
-background: #f0efef;
+html,
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: #f0efef;
 }
-header {
-background: rgb(8, 70, 240);
-height: 66px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-a{
-text-decoration: none;
-color: inherit;
-}
-header ul li ul {
-background: #f0ecec;
-position: absolute;
-top: 66px;
-right: 0px;
-width: 180px;
-display: none; 
-z-index: 88888;
-} 
-/* header ul li ul li {
-background:  #f3e3b2;
-width: 100%;
-} */
-header ul li ul li a{
-padding: 10px;
-}
-header ul li ul li a{
-padding: 10px;
-}
-header ul li ul li a.logout {
-color: #fe0410;
-}
-/* header ul li ul li a:hover {
-background: #f7db88;
-text-decoration: none;
-} */
-header ul li a {
-font-size: 1.5em;
-}   
-.dashboard-wrapper{
-display: flex;  /*it displays the contents horizontally to each other by default*/
-height: calc(100% - 66px);
+.dashboard-wrapper {
+  display: flex; /*it displays the contents horizontally to each other by default*/
+  height: 100vh;
 }
 .dashboard-wrapper .left-sidebar {
-flex: 2;    /*it will occupy 20% of the space*/
-height: 100%;
-background-color:  #082e66;
+  /*it will occupy 20% of the space*/
+  height: 100%;
+  width: 270px;
+  background-color: #082e66;
 }
-.dashboard-wrapper .left-sidebar ul{
-list-style: none;
-margin: 0px;
-padding: 0px;
-color: #f0efef;
+.dashboard-wrapper .left-sidebar ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  color: #f0efef;
 }
-.dashboard-wrapper .left-sidebar ul li a{
-padding: 18px;
-display: block; /*to span the whole width*/
-border-bottom: 1px solid  #2e88ee;
+.dashboard-wrapper .left-sidebar ul li a {
+  padding: 18px 34px;
+  display: block; /*to span the whole width*/
 }
-.dashboard-wrapper .left-sidebar ul li a:hover{
-background:   #02063d;
+.dashboard-wrapper .left-sidebar ul li a i {
+  width: 30px;
+  font-size: 1.3rem;
+  margin-right: 5px;
 }
-.dashboard-wrapper .dashboard-content {
-flex: 8;    /*it will occupy 80% of the space*/
-height: 100%;
-background: white;
-padding: 40px 100px 100px;
-overflow-y: scroll; /*this will enable us to scroll the content when the post are many*/
-}
-.dashboard-content .page-title{
-text-align: center;
-margin-bottom: 1.5rem; /*1rem is like 16px*/
-}
-@media only screen and (max-width: 750px){
-.dashboard-wrapper .dashboard-content {
-padding: 40px 40px 40px;
-}
+.dashboard-wrapper .left-sidebar ul li a:hover {
+  background: #02063d;
 }
 
-@media only screen and (max-width: 600px){
-.dashboard-wrapper .dashboard-content {
-padding: 40px 10px 10px;
+/* DASHBOARD CONTENT */
+.dashboard-wrapper .dashboard-content-wrapper {
+  flex: 8; /*it will occupy 80% of the space*/
+  height: 100%;
+  background: white;
+  overflow-y: scroll; /*this will enable us to scroll the content when the post are many*/
 }
+.dashboard-content-wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 15px 15px -4px rgba(0, 0, 0, 0.03);
 }
 
-@media only screen and (max-width: 360px){
-.dashboard-wrapper .dashboard-content {
-padding: 40px 0px 0px;
-}    
+main {
+  height: 200vh;
+}
+
+.dashboard-content-wrapper header ul li ul {
+  background: #f0ecec;
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  width: 180px;
+  display: none;
+  z-index: 88888;
+}
+.dashboard-content-wrapper header ul li ul li a {
+  padding: 10px;
+}
+.dashboard-content-wrapper header ul li ul li a {
+  padding: 10px;
+}
+.dashboard-content-wrapper header ul li ul li a.logout {
+  color: #fe0410;
+}
+.dashboard-content-wrapper .page-title {
+  text-align: center;
+  margin-bottom: 1.5rem; /*1rem is like 16px*/
+}
+
+@media only screen and (max-width: 750px) {
+  .dashboard-wrapper .dashboard-content-wrapper {
+    padding: 40px 40px 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard-wrapper .dashboard-content {
+    padding: 40px 10px 10px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .dashboard-wrapper .dashboard-content {
+    padding: 40px 0px 0px;
+  }
 }
