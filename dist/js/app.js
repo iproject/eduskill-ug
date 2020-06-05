@@ -1,20 +1,43 @@
-const frame = document.getElementById('check');
-const v2 = document.getElementById('video2');
+// UI Variables
+const UIvideosPlaylist = document.querySelector('.right-videos-container1');
+const UIvideoSubTitle = document.querySelector(
+  '.left-container1 .video-subtitle'
+);
+const UIvideoTitle = document.querySelector('.left-container1 .video-title');
+const UIiframePlayer = document.querySelector(
+  '.left-container1 .iframe-player'
+);
 
-v2.addEventListener('click',vTwo);
+// Events
+UIvideosPlaylist.addEventListener('click', getVideoData);
 
-function vTwo() {
-    prepareFrame('https://www.youtube.com/embed/O9MvdMqKvpU')
+// Get the video data from the item clicked
+function getVideoData(e) {
+  if (e.target.classList.contains('video')) {
+    const iframe = e.target.firstElementChild;
+    const videoUrl = iframe.getAttribute('src');
+    const videoTitle = iframe.nextElementSibling.firstElementChild.textContent;
+    const videoSubTitle =
+      iframe.nextElementSibling.firstElementChild.nextElementSibling
+        .textContent;
+
+    const videoInfo = {
+      videoUrl,
+      videoTitle,
+      videoSubTitle,
+    };
+
+    prepareFrame(videoInfo);
+  }
 }
-function prepareFrame(url) {
-    var ifrm = document.createElement("iframe");
-    var main = document.createElement("main-f");
-    ifrm.setAttribute("src", url);
-    ifrm.style.width = "640px";
-    ifrm.style.height = "480px";
-    frame.appendChild(ifrm)
-    main.innerHTML = frame;
 
+// Prepare the video
+function prepareFrame(videoInfo) {
+  const { videoUrl, videoTitle, videoSubTitle } = videoInfo;
+
+  // Update frame
+  UIvideoTitle.textContent = videoTitle;
+  UIvideoSubTitle.textContent = videoSubTitle;
+  UIiframePlayer.setAttribute('src', videoUrl);
+  var ifrm = document.createElement('iframe');
 }
-
-
