@@ -40,7 +40,7 @@ a {
   margin-right: 5px;
 }
 .dashboard-wrapper .left-sidebar ul li a:hover {
-  background: #02063d;
+  background: #a3c1f9;
 }
 
 /* DASHBOARD CONTENT */
@@ -56,11 +56,9 @@ a {
   justify-content: space-between;
   position: sticky;
   top: 0;
+  z-index: 100;
+  background: #fff;
   box-shadow: 0px 15px 15px -4px rgba(0, 0, 0, 0.03);
-}
-
-main {
-  height: 200vh;
 }
 
 .dashboard-content-wrapper header ul li ul {
